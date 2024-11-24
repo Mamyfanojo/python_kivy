@@ -1,0 +1,123 @@
+<LayoutExemplesTabs@TabbedPanel>
+    do_default_tab: False
+    TabbedPanelItem:
+        text: "Widget"
+        MainWidget:
+    TabbedPanelItem:
+        text: "Box"
+        BoxLayoutExemple:
+    TabbedPanelItem:
+        text: "Stack"
+        StackLayoutExemple:
+    TabbedPanelItem:
+        text: "Grid"
+        GridLayoutExemple:
+    TabbedPanelItem:
+        text: "Anchor"
+        AnchorLayoutExemple:
+    TabbedPanelItem:
+        text: "Scroll"
+        ScrollViewExemple:
+    TabbedPanelItem:
+        text: "Page"
+        PageLayoutExemple:
+
+<PageLayoutExemple@PageLayout>:
+    MainWidget:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayoutExemple:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    StackLayoutExemple:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayoutExemple:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+<ScrollViewExemple@ScrollView>:
+    StackLayoutExemple:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExemple>:
+
+    # "lr, tb"
+    # orientation: "lr-bt"
+    # padding: ("20dp", "0dp", "100dp", "50dp")
+    # spacing: "20dp"
+
+
+
+<GridLayoutExemple@GridLayout>:
+    #cols et rows
+    rows: 2
+    Button:
+        text: "A"
+        size_hint: .5, 1
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+        size_hint: .5, 1
+    Button:
+        text: "E"
+
+
+<AnchorLayoutExemple>:
+    # rig, lef, center
+    anchor_x: "left"
+
+    # bottom, top, center
+    anchor_y: "top"
+
+    BoxLayout:
+        size_hint: .4, .2
+        Button:
+            text: "A"
+        Button:
+            text: "B"
+
+
+<BoxLayoutExemple>
+    orientation: "vertical"
+    Button:
+        text: "A"
+        size_hint: .5, 1
+        pos_hint: { "top": 2 }
+    Button:
+        text: "B"
+    Label:
+        text: "C"
+
+
+
+<MainWidget>:
+    Button:
+        text:"Hello"
+        size: "40dp", "40dp"
+        pos:"200dp", "100dp"
+    Label:
+        text:"Hello"
+        size: "40dp", "40dp"
+        pos:"100dp", "100dp"
+        color: .5, 1, 0, 1
